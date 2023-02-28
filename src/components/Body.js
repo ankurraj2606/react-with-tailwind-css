@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import RestaurantCard from "../restaurantCard/RestaurantCard";
-import { FETCH_RES_LIST, RestaurantList } from "../../configs/config";
-import SearchBar from "../search/SearchBar";
-import Shimmer from "../shimmer/Shimmer";
-import Sort from "../sort/Sort";
+import RestaurantCard from "./RestaurantCard";
+import { FETCH_RES_LIST, RestaurantList } from "../configs/config";
+import SearchBar from "./SearchBar";
+import Shimmer from "./Shimmer";
+import Sort from "./Sort";
 import { Link } from "react-router-dom";
-import useOnline from "../../utils/useOnline";
+import useOnline from "../utils/useOnline";
 export const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
@@ -41,7 +41,7 @@ export const Body = () => {
     <Shimmer />
   ) : (
     <div className="body-container">
-      <div className="search-and-sort">
+      <div className="flex justify-between items-center">
         <SearchBar
           allRestaurants={allRestaurants}
           setAllRestaurants={setAllRestaurants}
@@ -55,7 +55,7 @@ export const Body = () => {
           setFilteredRestaurants={setFilteredRestaurants}
         />
       </div>
-      <div className="restaurant-list">
+      <div className="flex flex-wrap justify-center mx-auto">
         {filteredRestaurants?.length === 0 ? (
           <>
             <h1 className="no-results-class">
@@ -68,7 +68,7 @@ export const Body = () => {
               <Link
                 to={"/restaurant/" + restaurant.data.id}
                 key={restaurant.data.id}
-                className="card"
+                className="w-1/5 px-4 py-2 mx-2 my-2 border border-transparent hover:border hover:border-orange-200 border-collapse"
               >
                 <RestaurantCard {...restaurant.data} />
               </Link>

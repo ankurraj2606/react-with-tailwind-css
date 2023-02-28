@@ -1,16 +1,16 @@
 import React, { lazy } from "react";
 import ReactDOM from "react-dom/client";
-import HeaderComponent from "./components/header/Header";
-import { Footer } from "./components/footer/Footer";
-import { Body } from "./components/body/Body";
-import About from "./components/about/About";
-import Error from "./components/error/Error";
+import HeaderComponent from "./components/Header";
+import { Footer } from "./components/Footer";
+import { Body } from "./components/Body";
+import About from "./components/About";
+import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Contact from "./components/contact/ContactUs";
-import RestaurantMenu from "./components/restaurantMenu/RestaurantMenu";
-import Profile from "./components/profile/Profile";
+import Contact from "./components/ContactUs";
+import RestaurantMenu from "./components/RestaurantMenu";
+import Profile from "./components/Profile";
 import { Suspense } from "react";
-import Shimmer from "./components/shimmer/Shimmer";
+import Shimmer from "./components/Shimmer";
 
 /**
  * This is the normal way to import Instamart in our app.
@@ -50,7 +50,7 @@ import Shimmer from "./components/shimmer/Shimmer";
  * load the component after every render, and will make the app very slow.
  */
 
-const Instamart = lazy(() => import("./components/instamart/Instamart.js"));
+const Instamart = lazy(() => import("./components/Instamart.js"));
 
 /**
  * Chunking

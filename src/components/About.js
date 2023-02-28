@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import Profile from "../profile/Profile";
-import ProfileClass from "../class-components/ProfileClass";
+import Profile from "./Profile";
+import ProfileClass from "./ProfileClass";
 
 const About = () => {
   return (

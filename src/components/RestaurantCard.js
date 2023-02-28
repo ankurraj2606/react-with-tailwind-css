@@ -1,5 +1,9 @@
-import { IMG_CDN_URL } from "../../configs/config";
+import { IMG_CDN_URL } from "../configs/config";
 import { FaPercent, FaStar } from "react-icons/fa";
+
+// const colors = {
+//   orange:
+// }
 
 const RestaurantCard = ({
   cloudinaryImageId,
@@ -12,26 +16,33 @@ const RestaurantCard = ({
   aggregatedDiscountInfo,
 }) => {
   return (
-    <div className="restaurant-container">
-      <div className="restaurant-card">
-        <img src={IMG_CDN_URL + cloudinaryImageId} />
-        <h4>{name}</h4>
-        <p className="cuisines-para">{cuisines.join(",")}</p>
-        <div className="rating-time-cost">
-          <div className={avgRating >= 4 ? "green-rating" : "orange-rating"}>
-            <span>
-              <FaStar />
+    <div className="border-collapse">
+      <div className="mx-auto">
+        <img
+          src={IMG_CDN_URL + cloudinaryImageId}
+          className="text-center py-2"
+        />
+        <h4 className="font-semibold">{name}</h4>
+        <p className="break-all text-sm">{cuisines.join(",")}</p>
+        <div className="">
+          <div className="">
+            <span className="text-xs pr-1">
+              <FaStar className="inline pr-1 text-xl pb-1 stroke-orange-400" />
               {avgRating}
             </span>
-            <span> | {deliveryTime} mins</span>|<span>{costForTwoString}</span>
+            <span className="text-xs px-1"> | {deliveryTime} mins</span>|
+            <span className="text-xs px-1">{costForTwoString}</span>
           </div>
-          <div className="separator"></div>
-          <p className="offer-para">
-            <span className="offer-span">
-              <FaPercent className="offer-icon" />
-              {aggregatedDiscountInfo.shortDescriptionList[0].meta}
-            </span>
-          </p>
+          <div className="">
+            <p className="text-sm">
+              <span className="text-xs pr-1">
+                <FaPercent className="inline text-[10px]" />
+                <span className="pl-2 text-xs px-1">
+                  {aggregatedDiscountInfo.shortDescriptionList[0].meta}
+                </span>
+              </span>
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
-import Sort from "../sort/Sort";
-import { filterData } from "../../utils/helpers";
+import Sort from "./Sort";
+import { filterData } from "../utils/helpers";
 
 const SearchBar = (props) => {
   const {
@@ -17,11 +17,11 @@ const SearchBar = (props) => {
   const [searchText, setSearchText] = useState(""); //returns an array [variable-name, fn to modify the variable]
 
   return (
-    <div className="search-container">
+    <div className="py-2 px-4">
       <input
         placeholder="Search for restaurants, dishes, cuisines, ....."
         type="text"
-        className="search-input"
+        className="w-80 py-2 px-4 border border-orange-400 mr-8 focus:border focus:border-orange-600 focus:outline-none"
         value={searchText}
         onChange={(e) => {
           //e.target.value --> whatever we are writing in input field.
@@ -29,7 +29,7 @@ const SearchBar = (props) => {
         }}
       />
       <button
-        className="btn search-btn"
+        className="border px-4 py-2 mx-4 border-orange text-white bg-orange-600 hover:bg-white  hover:border-orange-600 hover:text-orange-600"
         onClick={() => {
           // need to filter the data and update the state --- restaurants
           const data = filterData(searchText, allRestaurants);

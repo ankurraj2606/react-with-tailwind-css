@@ -24,7 +24,7 @@ const Sort = (props) => {
     <div className="sort-container">
       <span className="sort-text">Sort By</span>
       <button
-        className="btn sort-btn-rating"
+        className="border px-4 py-2 mx-4 border-orange text-white bg-orange-600 hover:bg-white hover:border-1  hover:border-orange-600 hover:text-orange-600"
         onClick={() => {
           console.log("sort by rating clicked");
           const sortedRating = sortByRating(allRestaurants);
@@ -39,8 +39,12 @@ const Sort = (props) => {
       >
         Rating
       </button>
-      <button className="btn sort-btn-time">Delivery Time</button>
-      <button className="btn sort-btn-cost">Cost</button>
+      <button className="border px-4 py-2 mx-4 border-orange text-white bg-orange-600 hover:bg-white  hover:border-orange-600 hover:text-orange-600">
+        Delivery Time
+      </button>
+      <button className="border px-4 py-2 mx-4 border-orange text-white bg-orange-600 hover:bg-white  hover:border-orange-600 hover:text-orange-600">
+        Cost
+      </button>
     </div>
   );
 };
